@@ -1,71 +1,239 @@
-# Getting Started with Create React App
+# VoiceFinance – AI Personal Finance Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+VoiceFinance is a smart web application that helps users track daily expenses using **voice commands** or manual input. The app automatically categorizes expenses, visualizes spending patterns, and predicts future spending using a simple machine learning model.
 
-## Available Scripts
+This project demonstrates the integration of **React, Web Speech API, NLP-style parsing, data visualization, and ML-based prediction** in a single application.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 1. Voice Expense Entry
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* Add expenses by speaking naturally.
+* Example voice commands:
 
-### `npm test`
+  * "Add 500 rupees for groceries"
+  * "Spent 200 for lunch"
+  * "Paid 1500 electricity bill"
+* The system extracts:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  * Amount
+  * Category
+  * Description
+  * Date
 
-### `npm run build`
+### 2. Automatic Expense Categorization
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Expenses are automatically categorized into:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Groceries
+* Food & Dining
+* Transport
+* Shopping
+* Utilities
+* Health
+* Entertainment
+* Education
+* Rent
+* Other
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3. Dashboard
 
-### `npm run eject`
+The dashboard provides:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Total spending for the current month
+* Total spending for the current year
+* Machine learning prediction for next month
+* Category distribution chart
+* Monthly spending trend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 4. Expense Management
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Users can:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Add expenses manually
+* View monthly expense history
+* Delete entries
+* Filter expenses by month
 
-## Learn More
+### 5. Data Visualization
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The application includes:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Pie chart for category spending distribution
+* Bar chart for monthly spending trends
+* Category breakdown with percentage insights
 
-### Code Splitting
+### 6. Machine Learning Prediction
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The application predicts **next month's spending** using **Linear Regression** based on historical monthly data.
 
-### Analyzing the Bundle Size
+Insights include:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Forecasted next month spending
+* Average monthly spending
+* Highest spending month
+* Spending trend (increasing or decreasing)
 
-### Making a Progressive Web App
+### 7. Local Storage Persistence
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+All expense data is saved in **browser localStorage**, so user data persists even after refreshing the page.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Tech Stack
 
-### Deployment
+Frontend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* React (Hooks)
+* JavaScript (ES6+)
+* HTML5
+* CSS3
 
-### `npm run build` fails to minify
+APIs & Browser Features:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# voice_finance
+* Web Speech API (Voice Recognition)
+
+Data & Visualization:
+
+* SVG Charts
+* Custom Pie Chart
+* Custom Bar Chart
+
+Machine Learning:
+
+* Linear Regression algorithm implemented in JavaScript
+
+Storage:
+
+* Browser LocalStorage
+
+---
+
+## Project Structure
+
+```
+voice-finance-app
+│
+├── public
+│   └── index.html
+│
+├── src
+│   ├── App.js
+│   ├── index.js
+│   └── App.css
+│
+├── package.json
+└── README.md
+```
+
+All application logic, voice processing, analytics, and charts are implemented in **App.js**.
+
+---
+
+## Installation & Setup
+
+1. Clone the repository
+
+```
+git clone https://github.com/your-username/voice-finance.git
+```
+
+2. Navigate to the project directory
+
+```
+cd voice-finance
+```
+
+3. Install dependencies
+
+```
+npm install
+```
+
+4. Start the development server
+
+```
+npm start
+```
+
+5. Open the application in your browser
+
+```
+http://localhost:3000
+```
+
+---
+
+## Example Voice Commands
+
+You can try commands like:
+
+```
+Add 500 rupees for groceries
+Spent 200 on lunch
+Paid 1500 electricity bill
+Bought medicine for 350
+```
+
+The application will automatically detect the amount and category.
+
+---
+
+## Screens in the Application
+
+The application contains four main sections:
+
+Dashboard
+Overview of spending, charts, and ML prediction.
+
+Voice Input
+Add expenses using microphone speech recognition.
+
+Expenses
+View, filter, and delete expense entries.
+
+Analytics
+Detailed spending insights and machine learning predictions.
+
+---
+
+## Future Improvements
+
+Possible improvements include:
+
+* MongoDB cloud database integration
+* User authentication
+* Multi-language voice recognition (Hindi / English)
+* Mobile responsive design
+* Progressive Web App (PWA)
+* AI-based expense categorization using NLP models
+
+---
+
+## Learning Outcomes
+
+This project demonstrates:
+
+* Building a modern React application
+* Using voice recognition in web apps
+* Implementing basic NLP text parsing
+* Creating custom SVG data visualizations
+* Applying simple machine learning in JavaScript
+* Managing application state with React Hooks
+
+---
+
+## Author
+
+Anita Pralhad Koli
+Master of Computer Applications (MCA)
+Kavayitri Bahinabai Chaudhari North Maharashtra University
+
+---
+
+## License
+
+This project is for educational and portfolio purposes.
+
